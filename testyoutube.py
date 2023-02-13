@@ -14,7 +14,7 @@ class MyTest(unittest.TestCase):
         self.driver.implicitly_wait(10)
         self.driver.get("https://www.youtube.com/")
 
-        def test_akt01(self):
+    def test_akt01(self):
             searchFildElement = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.NAME, "search_query")))
             searchFildElement.clear()
             searchFildElement.send_keys("hayat project")
