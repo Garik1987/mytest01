@@ -20,6 +20,12 @@ class MyTest(unittest.TestCase):
             searchFildElement.send_keys("hayat project")
             searchFildElement.send_keys(Keys.ENTER)
             time.sleep(1)
-            imageButton = self.driver.find_element(By.XPATH, "(//img[@class='yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded'])[9]")
-            imageButton.click()
-            time.sleep(10)
+            videoButton = self.driver.find_element(By.XPATH, "(//*[@class='style-scope ytd-video-renderer'])[1]")
+            videoButton.click()
+            time.sleep(15)
+            videoButton1 = self.driver.find_element(By.XPATH,"(//video[@class='video-stream html5-main-video'])")
+            videoButton1.click()
+            time.sleep(3)
+
+    def tearDown(self):
+        self.driver.close()
